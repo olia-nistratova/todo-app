@@ -1,4 +1,4 @@
-  import { useReducer, useEffect } from 'react';
+import { useReducer, useEffect } from 'react';
 
 const useLocalStorageReducer = (key, reducer) => {
   const [state, dispatch] = useReducer(reducer, [], () => {
