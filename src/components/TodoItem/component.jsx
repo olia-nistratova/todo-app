@@ -6,7 +6,7 @@ import DeleteIcon from '@material-ui/icons/DeleteSweep';
 import CheckBoxIcon from '@material-ui/icons/CheckBox';
 import CheckBoxOutlineIcon from '@material-ui/icons/CheckBoxOutlineBlank';
 
-import { DispatchContext } from '../../context';
+import { TodosContext } from '../../context';
 import { REMOVE_TODO, TOGGLE_TODO, EDIT_TODO } from '../../actions';
 import useToggle from '../../hooks/useToggle';
 import TodoForm from '../TodoForm';
@@ -16,7 +16,7 @@ const useStyles = makeStyles(theme => (styles));
 
 const TodoItem = ({ id, task, completed }) => {
   const classes = useStyles();
-  const dispatch = useContext(DispatchContext);
+  const { dispatch } = useContext(TodosContext);
   const [isEditing, toggleIsEditing] = useToggle(false);
 
   const onCompleteTodo = () => {
