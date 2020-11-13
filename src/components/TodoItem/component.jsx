@@ -42,14 +42,20 @@ const TodoItem = ({ id, task, completed }) => {
   }
 
   return (
-    <ListItem className={classes.root} onClick={onCompleteTodo}>
+    <ListItem className={classes.root}>
       <Typography className={completed ? classes.completedTask : ''}>
         {task}
       </Typography>
       <div>
         {completed 
-          ? <CheckBoxIcon className={classes.iconCheckbox}/>
-          : <CheckBoxOutlineIcon className={classes.iconCheckbox}/>
+          ? <CheckBoxIcon
+              className={classes.iconCheckbox}
+              onClick={onCompleteTodo}
+            />
+          : <CheckBoxOutlineIcon
+              className={classes.iconCheckbox}
+              onClick={onCompleteTodo}
+            />
         }
         <CreateIcon
           className={classes.iconEdit}
